@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Clientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let usuario of usuarios" class="user-card">
+    <ion-card-header>
+      <ion-card-title>{{ usuario.nombreRestaurante }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>Dirección:</ion-label>
+          <ion-label>{{ usuario.direccion }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Teléfono:</ion-label>
+          <ion-label>{{ usuario.telefono }}</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item *ngFor="let mesa of usuario.mesas">
+          <ion-label>{{ mesa.nombre }}</ion-label>
+          <ion-label>{{ mesa.sillas }}</ion-label>
+          <ion-label>{{ mesa.reservada === 'reservada' ? 'Reservada' : 'Disponible' }}</ion-label>
+          <ion-label *ngIf="mesa.reservada === 'reservada'">Fecha de Reserva: {{ mesa.fechaReserva }}</ion-label>
+          <ion-label *ngIf="mesa.reservada === 'reservada'">Hora de Reserva: {{ mesa.horaReserva }}</ion-label>
+          <ion-label *ngIf="mesa.reservada === 'reservada'">Reservado por: {{ mesa.nombreReserva }}</ion-label>
+          <ion-button slot="end" (click)="confirmarReserva(usuario, mesa)">Reservar</ion-button>
+          <ion-button slot="end" (click)="cancelarReserva(mesa)" *ngIf="mesa.reservada === 'reservada'">Cancelar Reserva</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

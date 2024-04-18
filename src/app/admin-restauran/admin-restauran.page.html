@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Admin Restauran</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="salir()">Salir</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="usuario">
+    <ion-card-header>
+      <ion-card-title>{{ usuario.nombreRestaurante }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let mesa of usuario.mesas; let i = index">
+          <ion-label>{{ mesa.nombre }}</ion-label>
+          <ion-label>{{ mesa.sillas }}</ion-label>
+          <ion-label>{{ mesa.reservada === 'reservada' ? 'Reservada' : 'Disponible' }}</ion-label>
+          <ion-label *ngIf="mesa.reservada === 'reservada'">Fecha de Reserva: {{ mesa.fechaReserva }}</ion-label>
+          <ion-label *ngIf="mesa.reservada === 'reservada'">Hora de Reserva: {{ mesa.horaReserva }}</ion-label>
+          <ion-label *ngIf="mesa.reservada === 'reservada'">Reservado por: {{ mesa.nombreReserva }}</ion-label>
+          <ion-button slot="end" (click)="editarMesa(i)">Editar</ion-button>
+       
+          <ion-button slot="end" *ngIf="mesa.reservada === 'reservada'" (click)="actualizarReservaEnInterfaz(mesa, i)">Cancelar</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

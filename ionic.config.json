@@ -1,0 +1,7 @@
+{
+  "name": "Reserva-de-restauranes",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

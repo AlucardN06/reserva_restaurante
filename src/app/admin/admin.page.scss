@@ -1,0 +1,65 @@
+// Estilos generales para la página
+ion-content {
+    --background: #1f1d1d;
+}
+
+.editar-buttons {
+    ion-button {
+        --background: #007bff;
+        --color: #0a0a0a;
+        --border-radius: 4px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        margin-bottom: 16px;
+    }
+}
+
+// Estilos para los elementos de usuario cliente
+.usuario-item {
+    ion-label {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    ion-input {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    ion-button {
+        margin-left: 8px;
+        --background: #007bff;
+        --color: #fff;
+        --border-radius: 4px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        font-size: 14px;
+    }
+}
+
+// Estilos para los elementos de usuario restaurante
+.usuario-item-restaurante {
+    ion-label {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    ion-input {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    ion-button {
+        margin-left: 8px;
+        --background: #007bff;
+        --color: #fff;
+        --border-radius: 4px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        font-size: 14px;
+    }
+}

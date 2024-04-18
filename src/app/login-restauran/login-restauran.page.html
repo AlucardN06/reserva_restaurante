@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title>Login Restaurante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="login-restauran">
+    <div class="login-form">
+      <ion-item lines="full">
+        <ion-label  position="floating" ><p  class="center-text">Correo</p></ion-label>
+        <ion-input type="email" [(ngModel)]="loginData.email"></ion-input>
+      </ion-item>
+        <ion-item lines="full">
+        <ion-label position="floating"><p  class="center-text">Contraseña</p></ion-label>        
+        <ion-input type="password" [(ngModel)]="loginData.password"></ion-input>
+    
+        </ion-item>
+        <ion-item>
+      <ion-button expand="full" color="primary" (click)="login()">Iniciar sesión</ion-button>
+      <ion-button expand="full" color="secondary" routerLink="/registro-restauran">Registrarse</ion-button>  
+    </ion-item>
+    </div>
+  </div>
+</ion-content>

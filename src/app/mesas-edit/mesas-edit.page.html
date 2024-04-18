@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Mesa</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngIf="mesa">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="mesa.nombre"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="mesa">
+      <ion-label position="floating">Número de sillas</ion-label>
+      <ion-input type="number" [(ngModel)]="mesa.sillas"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="mesa">
+      <ion-label>Estado</ion-label>
+      <ion-select [(ngModel)]="mesa.reservada">
+        <ion-select-option value="disponible">Disponible</ion-select-option>
+        <ion-select-option value="reservada">Reservada</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="mesa.reservada === 'reservada'">
+      <ion-label position="floating">Fecha de Reserva</ion-label>
+      <ion-input type="date" [(ngModel)]="mesa.fechaReserva"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="mesa.reservada === 'reservada'">
+      <ion-label position="floating">Hora de Reserva</ion-label>
+      <ion-input type="time" [(ngModel)]="mesa.horaReserva"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="guardarCambios()">Guardar Cambios</ion-button>
+</ion-content>

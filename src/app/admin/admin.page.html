@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Administrar Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="editar-buttons">
+    <ion-button expand="block" (click)="regresarALoginCliente()">Regresar a Login Cliente</ion-button>
+  </div>
+
+  <ion-list *ngIf="usuariosCliente.length > 0">
+    <ion-list-header>
+      <h1>Cuentas de clientes</h1>
+    </ion-list-header>
+    <ion-item *ngFor="let usuario of usuariosCliente">
+      <ion-label>Nombre: {{ usuario.nombre }}</ion-label>
+      <ion-label>Fecha de Nacimiento: {{ usuario.fechaNacimiento }}</ion-label>
+      <ion-label>Teléfono: {{ usuario.telefono }}</ion-label>
+      <ion-label>Correo Electrónico: {{ usuario.email }}</ion-label>
+      <ion-label>Contraseña: {{ usuario.password }}</ion-label>
+      <ion-button slot="end" (click)="eliminarUsuario(usuario)">Eliminar</ion-button>
+      <ion-button slot="end" (click)="editarUsuario(usuario)">Editar</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <div class="editar-buttons">
+    <ion-button expand="block" (click)="regresarALoginRestaurante()">Regresar a Login Restaurante</ion-button>
+  </div>
+
+  <ion-list *ngIf="usuariosRestaurante.length > 0">
+    <ion-list-header>
+     <h1> Cuentas de restaurantes</h1>
+    </ion-list-header>
+    <ion-item class="usuario-item" *ngFor="let usuario of usuariosRestaurante">
+      <ion-label>Nombre: {{ usuario.nombre }}</ion-label>
+      <ion-label>Nombre del Restaurante: {{ usuario.nombreRestaurante }}</ion-label>
+      <ion-label>Teléfono: {{ usuario.telefono }}</ion-label>
+      <ion-label>Dirección: {{ usuario.direccion }}</ion-label>
+      <ion-label>Correo Electrónico: {{ usuario.correo }}</ion-label>
+      <ion-label>Contraseña: {{ usuario.contrasena }}</ion-label>
+      <ion-button slot="end" (click)="eliminarUsuario(usuario)">Eliminar</ion-button>
+      <ion-button slot="end" (click)="editarUsuarioRestaurante(usuario)">Editar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

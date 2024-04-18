@@ -1,0 +1,43 @@
+.form-container {
+  max-width: 400px;
+  width: 90%; /* Ajuste de porcentaje para hacerlo responsivo */
+  margin: 0 auto; /* Centrar el formulario horizontalmente */
+}
+
+ion-item {
+  --background: #141212;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+ion-button {
+  --background: #ff6347;
+  --color: #fff;
+  --border-radius: 8px;
+  margin-top: 16px;
+}
+
+ion-button.cancelar {
+  --background: #fff;
+  --color: #ff6347;
+  --border-radius: 8px;
+  margin-top: 16px;
+  border: 1px solid #ff6347;
+}
+
+ion-input,
+ion-select {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  color: #f1eeee; /* Ajuste de color de texto */
+}

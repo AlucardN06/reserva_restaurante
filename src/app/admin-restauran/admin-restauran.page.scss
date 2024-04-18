@@ -1,0 +1,49 @@
+ion-card {
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+  }
+  
+  ion-label {
+    font-weight: bold;
+  }
+  
+  ion-list-header {
+    background-color: #f8f8f8;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  ion-button[slot="end"] {
+    margin-left: auto;
+  }
+  
+  ion-item-sliding {
+    --background: #f8f8f8;
+  }
+  
+  ion-item-options {
+    --ion-item-option-background: #ff6347;
+    --ion-item-option-color: #fff;
+  }
+  
+  .mesa-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .mesa-reservada {
+    color: #ff6347;
+  }
+  
+  

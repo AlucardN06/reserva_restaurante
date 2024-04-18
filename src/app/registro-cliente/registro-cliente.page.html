@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="registro-cliente">
+    <div class="registro-form">
+      <ion-item>
+        <ion-label position="floating" class="top-box"><p  class="center-text">Nombre</p></ion-label>
+        <ion-input type="text" [(ngModel)]="registroData.nombre"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label  class="top-box">Fecha de nacimiento</ion-label>
+        <ion-input type="date" [(ngModel)]="registroData.fechaNacimiento"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating"><p  class="center-text">Número de teléfono</p></ion-label>
+        <ion-input type="tel" [(ngModel)]="registroData.telefono"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating"><p  class="center-text">Correo</p></ion-label>
+        <ion-input type="email" [(ngModel)]="registroData.email"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating"><p  class="center-text">Contraseña</p></ion-label>
+        <ion-input type="password" [(ngModel)]="registroData.password"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating"><p  class="center-text">Confirmar contraseña</p></ion-label>
+        <ion-input type="password" [(ngModel)]="registroData.confirmPassword"></ion-input>
+      </ion-item>
+      
+      <ion-button expand="full" (click)="register()">Registrarse</ion-button>
+      <ion-button expand="full" color="medium" (click)="goBack()">Cancelar</ion-button>
+    </div>
+    <div class="registro-mensaje-exito" *ngIf="registrado">
+      Usuario registrado correctamente. ¡Gracias por registrarte!
+    </div>    
+  </div>
+</ion-content>

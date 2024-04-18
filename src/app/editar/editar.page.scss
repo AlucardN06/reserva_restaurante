@@ -1,0 +1,36 @@
+ion-header {
+    ion-toolbar {
+      --background: #007bff; /* Color azul */
+      --color: #fff; /* Color blanco */
+      --ion-color-base: #007bff; /* Color azul */
+    }
+  }
+  
+  ion-content {
+    --ion-background-color: #f4f4f4; /* Color gris claro */
+    
+    ion-list {
+      ion-item {
+        ion-label {
+          font-weight: bold;
+        }
+        
+        ion-input {
+          border: 1px solid #ccc; /* Borde delgado de color gris */
+          border-radius: 4px; /* Bordes redondeados */
+          padding: 8px; /* Espaciado interior */
+        }
+      }
+    }
+    
+    .editar-buttons {
+      ion-button {
+        --background: #007bff; /* Color azul */
+        --color: #fff; /* Color blanco */
+        --border-radius: 4px; /* Bordes redondeados */
+        --padding-start: 16px; /* Espaciado interior horizontal */
+        --padding-end: 16px; /* Espaciado interior horizontal */
+      }
+    }
+  }
+  
