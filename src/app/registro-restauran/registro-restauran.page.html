@@ -7,22 +7,22 @@
 <ion-content class="ion-padding">
   <ion-list class="form-container">
 
-   <!-- Nombre -->
-   <ion-item>
-    <ion-label position="floating">Nombre</ion-label>
-    <ion-input type="text" [(ngModel)]="registroRestauranData.nombre" required></ion-input>
-  </ion-item>
+    <!-- Nombre -->
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="registroRestauranData.nombre"  maxlength="25" required></ion-input>
+    </ion-item>
 
-  <!-- Nombre del restaurante -->
+    <!-- Nombre del restaurante -->
     <ion-item>
       <ion-label position="floating">Nombre del restaurante</ion-label>
-      <ion-input type="text" [(ngModel)]="registroRestauranData.nombreRestaurante" required></ion-input>
+      <ion-input type="text" [(ngModel)]="registroRestauranData.nombreRestaurante" maxlength="25" required></ion-input>
     </ion-item>
 
     <!-- Teléfono del restaurante -->
     <ion-item>
-      <ion-label position="floating">Teléfono del restaurante</ion-label>
-      <ion-input type="text" [(ngModel)]="registroRestauranData.telefono" required></ion-input>
+      <ion-label position="floating">Teléfono del restaurante (10 dígitos)</ion-label>
+      <ion-input type="tel" [(ngModel)]="registroRestauranData.telefono" pattern="[0-9]+" maxlength="12" required></ion-input>
     </ion-item>
 
     <!-- Dirección del restaurante -->
@@ -34,7 +34,7 @@
     <!-- Correo Electrónico -->
     <ion-item>
       <ion-label position="floating">Correo Electrónico</ion-label>
-      <ion-input type="email" [(ngModel)]="registroRestauranData.correo" required></ion-input>
+      <ion-input type="email" [(ngModel)]="registroRestauranData.correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></ion-input>
     </ion-item>
 
     <!-- Contraseña -->
@@ -50,9 +50,24 @@
     </ion-item>
 
     <!-- Total de Mesas -->
+ 
+
+    <!-- Mesas -->
     <ion-item>
-      <ion-label position="floating">Total de Mesas</ion-label>
-      <ion-input type="number" [(ngModel)]="totalMesas" min="5" required></ion-input>
+      <ion-label position="floating">Mesas de 4 sillas</ion-label>
+      <ion-input type="number" [(ngModel)]="mesas4Sillas" min="0"></ion-input>
+    </ion-item>
+    
+    <!-- Total de Mesas de 6 sillas -->
+    <ion-item>
+      <ion-label position="floating">Mesas de 6 sillas</ion-label>
+      <ion-input type="number" [(ngModel)]="mesas6Sillas" min="0"></ion-input>
+    </ion-item>
+    
+    <!-- Total de Mesas de 10 sillas -->
+    <ion-item>
+      <ion-label position="floating">Mesas de 10 sillas</ion-label>
+      <ion-input type="number" [(ngModel)]="mesas10Sillas" min="0"></ion-input>
     </ion-item>
 
     <!-- Botón de Registro -->

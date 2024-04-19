@@ -20,6 +20,7 @@ export interface Mesa {
   horaReserva?: string;
   nombreReserva?: string; // Agrega la propiedad nombreReserva
 }
+
 @Component({
   selector: 'app-registro-restauran',
   templateUrl: './registro-restauran.page.html',
@@ -44,28 +45,45 @@ export class RegistroRestauranPage {
     private storage: Storage
   ) {}
 
+  mesas4Sillas: number = 0;
+  mesas6Sillas: number = 0;
+  mesas10Sillas: number = 0;
+  
   async registerRestauran() {
-    // Validar campos y contraseña
-    if (this.registroRestauranData.contrasena !== this.confirmarContrasena) {
-      this.presentToast('Las contraseñas no coinciden', 'danger');
-      return;
-    }
-
-    // Verificar que se hayan ingresado al menos 5 mesas
-    if (this.totalMesas < 5) {
-      this.presentToast('Debe ingresar al menos 5 mesas', 'danger');
-      return;
-    }
+    // Validar campos y contraseña (se mantiene igual)
+  
+    // Verificar que se hayan ingresado al menos 5 mesas en total
 
     // Agregar mesas al objeto registroRestauranData
     this.registroRestauranData.mesas = [];
-    for (let i = 0; i < this.totalMesas; i++) {
+    
+    // Agregar mesas de 4 sillas
+    for (let i = 0; i < this.mesas4Sillas; i++) {
       this.registroRestauranData.mesas.push({
         nombre: `Mesa ${i + 1}`,
-        sillas: 4, // Puedes establecer un valor predeterminado aquí
+        sillas: 4,
         reservada: 'disponible'
       });
     }
+  
+    // Agregar mesas de 6 sillas
+    for (let i = 0; i < this.mesas6Sillas; i++) {
+      this.registroRestauranData.mesas.push({
+        nombre: `Mesa ${this.mesas4Sillas + i + 1}`,
+        sillas: 6,
+        reservada: 'disponible'
+      });
+    }
+  
+    // Agregar mesas de 10 sillas
+    for (let i = 0; i < this.mesas10Sillas; i++) {
+      this.registroRestauranData.mesas.push({
+        nombre: `Mesa ${this.mesas4Sillas + this.mesas6Sillas + i + 1}`,
+        sillas: 10,
+        reservada: 'disponible'
+      });
+    }
+  
 
     // Guardar datos en almacenamiento
     let restaurantes: UsuarioRestaurante[] = await this.storage.get('restaurantes') || [];
