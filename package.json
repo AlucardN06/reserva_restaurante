@@ -3,6 +3,58 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
+    "@angular/common": "^17.3.5",
+    "@angular/core": "^17.3.5",
+    "@angular/forms": "^17.3.5",
+    "@angular/router": "^17.3.5",
+    "@ionic/angular": "^8.0.0",
+    "@ionic/storage-angular": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-particles": "^2.9.3",
+    "tsparticles": "^2.9.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+   "test:ci": "karma start --single-run",
+    "eject": "react-scripts eject",
+    "e2e": "protractor protractor.conf.js",
+    "deploy:android": "ionic build && npx cap copy android && npx cap open android"
+
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@angular-eslint/eslint-plugin": "^17.3.0",
+    "@angular-eslint/eslint-plugin-template": "^17.3.0",
+    "@angular/platform-browser-dynamic": "^17.3.5",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/angular": "^1.8.9",
+    "@types/async": "^3.2.24",
+    "@types/jasmine": "^5.1.4",
+    "@types/jest": "^29.5.12",
+    "react-scripts": "^3.0.1",
+    "typescript": "^3.9.10"
+=======
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-particles": "^2.9.3",
@@ -32,5 +84,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+>>>>>>> c0754b4f166cd70d0674174430f2e3b00a6f702c
   }
 }

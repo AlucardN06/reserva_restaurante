@@ -1,3 +1,32 @@
+<<<<<<< HEAD
+# Use an official Node.js image
+FROM node:latest
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy package.json y package-lock.json para instalar las dependencias
+COPY package*.json ./
+
+# Instalar las dependencias y forzar la instalación
+RUN npm install --legacy-peer-deps --force && \
+    npm install typescript@3.2.1 --save-dev && \
+    npm uninstall eslint --save-dev && \
+    npm install eslint@6.6.0 --save-dev && \
+    npx update-browserslist-db@latest
+
+# Copiar el resto de los archivos
+COPY . .
+
+# Limpiar la caché de npm
+RUN npm cache clean --force
+
+# Exponer el puerto necesario
+EXPOSE 8100
+
+# Comando de inicio
+CMD ["npm", "start"]
+=======
 # Start your image with a node base image
 FROM node:18-alpine
 
@@ -21,3 +50,4 @@ EXPOSE 3000
 
 # Start the app using serve command
 CMD [ "serve", "-s", "build" ]
+>>>>>>> c0754b4f166cd70d0674174430f2e3b00a6f702c
